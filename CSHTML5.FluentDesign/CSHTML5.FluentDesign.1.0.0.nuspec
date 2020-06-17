@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CSHTML5.FluentDesign</id>
+    <version>1.0.0</version>
+    <authors>The DotNetGuy</authors>
+    <owners>The DotNetGuy</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fluent Design controls and styles for CSHTML5</description>
+    <dependencies>
+      <dependency id="CSHTML5" version="2.0.0-alpha63-083" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\fangeles\source\repos\CSHTML5_FluentDesign\CSHTML5.FluentDesign\bin\Release\CSHTML5.FluentDesign.dll" target="lib\net45\CSHTML5.FluentDesign.dll" />
+  </files>
+</package>

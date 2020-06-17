@@ -68,7 +68,7 @@ public partial class DialogInterface : ChildWindow
         NeutralButton.Content = NeutralButtonText;
 
 
-        SolidColorBrush clr = (SolidColorBrush)Application.Current.Resources["PrimaryColor_Base"];
+        SolidColorBrush clr = (SolidColorBrush)Application.Current.Resources["ImmersiveSystemAccentBrush"];
 
 
         if (IsAccented == false)

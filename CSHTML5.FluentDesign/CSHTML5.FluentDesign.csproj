@@ -17,6 +17,7 @@
     <Cshtml5OutputType>Library</Cshtml5OutputType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controls\AcrylicBackground\AcrylicBackground.xaml.cs">
@@ -90,6 +93,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bridge.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Theme\Styles\" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Bridge, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CSHTML5.2.0.0-alpha63-083\lib\net40\Bridge.dll</HintPath>
       <Private>True</Private>
@@ -102,13 +112,6 @@
       <HintPath>..\packages\CSHTML5.2.0.0-alpha63-083\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bridge.json" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Theme\Styles\" />
   </ItemGroup>
   <Import Project="..\packages\CSHTML5.2.0.0-alpha63-083\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha63-083\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

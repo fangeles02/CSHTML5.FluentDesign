@@ -22,7 +22,7 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="BorderBrush" Value="{StaticResource PrimaryColor_Base}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ImmersiveSystemAccent}" />
             <Setter Property="OverlayBrush" Value="#FFFFFF" />
             <Setter Property="OverlayOpacity" Value="0.6" />
             <Setter Property="Template">
@@ -41,7 +41,7 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
 
-                                        <Border Background="{StaticResource PrimaryColor_Base}"/>
+                                        <Border Background="{StaticResource ImmersiveSystemAccent}"/>
 
                                         <Border x:Name="Chrome" Grid.Row="1" Width="Auto"  BorderThickness="0" Background="Transparent">
                                             <Grid Height="Auto" Width="Auto" Margin="0" VerticalAlignment="Top">
@@ -136,7 +136,7 @@
         </Grid.RowDefinitions>
 
 
-        <Border Name="Border_AccentHeader" Background="{StaticResource PrimaryColor_Base}"/>
+        <Border Name="Border_AccentHeader" Background="{StaticResource ImmersiveSystemAccent}"/>
 
         <TextBlock Name="Label_Title" Text="Title" Grid.Row="1" Foreground="{StaticResource InterfaceForegroundColor}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="20,20,20,5"/>
 

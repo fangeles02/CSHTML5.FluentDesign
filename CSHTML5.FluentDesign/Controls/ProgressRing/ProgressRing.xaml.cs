@@ -88,7 +88,7 @@ namespace Fluent
         {
 
 
-            var res_color = Application.Current.Resources["ImmersiveSystemAccentBrush"] as SolidColorBrush;
+            var res_color = Application.Current.Resources["ImmersiveSystemAccentBrushBrush"] as SolidColorBrush;
             string s_colour = res_color.ToString().Replace("#FF", "#");
 
 
