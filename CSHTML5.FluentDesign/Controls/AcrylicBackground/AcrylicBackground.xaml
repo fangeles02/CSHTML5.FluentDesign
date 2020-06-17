@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="Fluent.AcrylicBackground"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DashboardsWeb.Controls">
+    <native:HtmlPresenter xmlns:native="using:CSHTML5.Native.Html.Controls"  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="native">
+        <style type='text/css'>
+            .modal {
+                  width: 100%;
+                  height: 100%;
+                }
+                
+                @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+                  .modal {
+                    -webkit-backdrop-filter: blur(20px);
+                    backdrop-filter: blur(20px) ;
+                    background-color: rgba(255, 255, 255, 0.5);  
+                  }
+
+                
+
+}
+
+
+        </style>
+
+        <div class="modal"/>
+
+    </native:HtmlPresenter>
+
+
+</UserControl>

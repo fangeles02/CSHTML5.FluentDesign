@@ -1,0 +1,153 @@
+﻿<ChildWindow
+    x:Class="DialogInterface"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    MinWidth="300" MinHeight="200" 
+    HasCloseButton="False"
+    Margin="10"
+    FontSize="14"
+    RenderTransformOrigin="0,0"
+    Name="ChildWindow1"
+    Opacity="0"
+    Loaded="ChildWindow1_Loaded">
+
+    <ChildWindow.RenderTransform>
+        <ScaleTransform  x:Name="AAAAA" ScaleX="1" ScaleY="1.1"/>
+    </ChildWindow.RenderTransform>
+
+    <ChildWindow.Style>
+        <Style TargetType="ChildWindow">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="{StaticResource PrimaryColor_Base}" />
+            <Setter Property="OverlayBrush" Value="#FFFFFF" />
+            <Setter Property="OverlayOpacity" Value="0.6" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ChildWindow">
+                        <Grid x:Name="Root">
+                            <Grid x:Name="Overlay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Background="{TemplateBinding OverlayBrush}" Opacity="{TemplateBinding OverlayOpacity}" />
+                            <Border x:Name="ContentRoot" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" RenderTransformOrigin="0.5,0.5" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                                <Border x:Name="ContentContainer" Background="{StaticResource InterfaceBackgroundColor}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="4,4,2,2" ClipToBounds="True">
+                                    <Border.Effect>
+                                        <DropShadowEffect Direction="-90"  Opacity="0.8" Color="Gray" BlurRadius="30" />
+                                    </Border.Effect>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0"/>
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+                                        <Border Background="{StaticResource PrimaryColor_Base}"/>
+
+                                        <Border x:Name="Chrome" Grid.Row="1" Width="Auto"  BorderThickness="0" Background="Transparent">
+                                            <Grid Height="Auto" Width="Auto" Margin="0" VerticalAlignment="Top">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition />
+                                                    <ColumnDefinition Width="45" />
+                                                </Grid.ColumnDefinitions>
+                                                <ContentControl Content="{TemplateBinding Title}" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="{StaticResource InterfaceForegroundColor}"/>
+                                                <Button x:Name="CloseButton" Grid.Column="1" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="35" Height="35"  Padding="0" >
+                                                    <Button.Content>
+                                                        <!--<Canvas Width="15" Height="15">
+                                                                <Path Fill="{StaticResource PrimaryColor_Alt}" Data="{Binding Source={StaticResource Icons}, Path=Cancel_50px }" >
+                                                                    <Path.RenderTransform>
+                                                                        <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
+                                                                    </Path.RenderTransform>
+                                                                </Path>
+                                                            </Canvas>-->
+
+                                                        <Path Style="{StaticResource Icon_Cancel}" Fill="{StaticResource InterfaceForegroundColor}" Stretch="Uniform" Width="11" Height="11" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                    </Button.Content>
+                                                </Button>
+                                            </Grid>
+                                        </Border>
+                                        <Border Background="{TemplateBinding Background}" Margin="0" Grid.Row="2">
+                                            <ContentPresenter x:Name="ContentPresenter" Margin="0" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ChildWindow.Style>
+
+
+    <ChildWindow.Resources>
+        <ResourceDictionary>
+
+
+
+
+            <Storyboard x:Key="ShowAnimation">
+
+                <DoubleAnimation Storyboard.TargetName="ChildWindow1" Storyboard.TargetProperty="(RenderTransform).ScaleY" Duration="0:0:0.5" To="1">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+
+
+
+                <DoubleAnimation Storyboard.TargetName="ChildWindow1" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5" From="0" To="1" BeginTime="0:0:0.1">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+
+
+            <Storyboard x:Key="HideAnimation">
+
+                <DoubleAnimation Storyboard.TargetName="ChildWindow1" Storyboard.TargetProperty="(RenderTransform).ScaleY" Duration="0:0:0.5" To="0.95">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+
+
+
+                <DoubleAnimation Storyboard.TargetName="ChildWindow1" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"  To="0" BeginTime="0:0:0.1">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+
+
+        </ResourceDictionary>
+    </ChildWindow.Resources>
+
+
+    <Grid x:Name="LayoutRoot"  ClipToBounds="True" MaxWidth="500" MinWidth="300">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Border Name="Border_AccentHeader" Background="{StaticResource PrimaryColor_Base}"/>
+
+        <TextBlock Name="Label_Title" Text="Title" Grid.Row="1" Foreground="{StaticResource InterfaceForegroundColor}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="20,20,20,5"/>
+
+        <TextBlock Name="Label_Message" Margin="20,20,20,10" Foreground="{StaticResource InterfaceForegroundColor}" Text="The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog." TextWrapping="Wrap" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20">
+            <Button x:Name="OKButton" Content="OK" Style="{StaticResource Button_Accent}" MinWidth="80" Click="OKButton_Click" Margin="1"   />
+            <Button x:Name="NeutralButton" Content="Maybe"  HorizontalAlignment="Right" MinWidth="80"  Margin="1" Visibility="Collapsed" Click="NeutralButton_Click"/>
+            <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" MinWidth="80"  Margin="1" Visibility="Collapsed" />
+        </StackPanel>
+
+    </Grid>
+
+</ChildWindow>
