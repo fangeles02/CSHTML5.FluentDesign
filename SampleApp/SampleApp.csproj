@@ -4,20 +4,23 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C03E5902-4843-4A03-990E-7D1D11146625}</ProjectGuid>
+    <ProjectGuid>{D1EBF708-8241-40A8-8F69-F031A4260E0F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSHTML5.FluentDesign</RootNamespace>
-    <AssemblyName>CSHTML5.FluentDesign</AssemblyName>
+    <RootNamespace>SampleApp</RootNamespace>
+    <AssemblyName>SampleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsCSharpXamlForHtml5>true</IsCSharpXamlForHtml5>
-    <CSharpXamlForHtml5OutputType>Library</CSharpXamlForHtml5OutputType>
+    <CSharpXamlForHtml5OutputType>Application</CSharpXamlForHtml5OutputType>
     <IsCshtml5>true</IsCshtml5>
-    <Cshtml5OutputType>Library</Cshtml5OutputType>
+    <Cshtml5OutputType>Application</Cshtml5OutputType>
+    <StartAction>Program</StartAction>
+    <StartProgram>
+    </StartProgram>
+    <StartArguments>"SampleApp.dll"</StartArguments>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,7 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,66 +40,27 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controls\AcrylicBackground\AcrylicBackground.xaml.cs">
-      <DependentUpon>AcrylicBackground.xaml</DependentUpon>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Dialog\Dialog.cs" />
-    <Compile Include="Controls\Dialog\DialogInterface.xaml.cs">
-      <DependentUpon>DialogInterface.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ProgressBar\ProgressBar.cs" />
-    <Compile Include="Controls\ProgressRing\ProgressRing.xaml.cs">
-      <DependentUpon>ProgressRing.xaml</DependentUpon>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controls\Dialog\DialogInterface.xaml">
+    <Content Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
-    <Page Include="AccentColors\DefaultRed.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="AccentColors\DefaultBlue.xaml">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\ProgressRing\ProgressRing.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Content Include="Controls\AcrylicBackground\AcrylicBackground.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Content>
-    <Page Include="FluentDesign.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\FluentDesignStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Theme\DarkTheme.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Theme\LightTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bridge.json" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Theme\Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Bridge, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -112,6 +75,16 @@
       <HintPath>..\packages\CSHTML5.2.0.0-alpha63-083\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bridge.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSHTML5.FluentDesign\CSHTML5.FluentDesign.csproj">
+      <Project>{c03e5902-4843-4a03-990e-7d1d11146625}</Project>
+      <Name>CSHTML5.FluentDesign</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\packages\CSHTML5.2.0.0-alpha63-083\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha63-083\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

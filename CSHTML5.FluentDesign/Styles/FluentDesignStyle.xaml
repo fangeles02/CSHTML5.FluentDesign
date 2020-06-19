@@ -5,7 +5,12 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     >
 
-
+    <!--<Style TargetType="Control" x:Key="baseStyle">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <Style TargetType="TextBlock" BasedOn="{StaticResource baseStyle}"/>
+    <Style TargetType="Label" BasedOn="{StaticResource baseStyle}"/>
+    <Style TargetType="Button" BasedOn="{StaticResource baseStyle}"/>-->
 
     <!--Interface Colors-->
 

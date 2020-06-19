@@ -22,7 +22,7 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="BorderBrush" Value="{StaticResource ImmersiveSystemAccent}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ImmersiveSystemAccentBrush}" />
             <Setter Property="OverlayBrush" Value="#FFFFFF" />
             <Setter Property="OverlayOpacity" Value="0.6" />
             <Setter Property="Template">
@@ -31,7 +31,7 @@
                         <Grid x:Name="Root">
                             <Grid x:Name="Overlay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Background="{TemplateBinding OverlayBrush}" Opacity="{TemplateBinding OverlayOpacity}" />
                             <Border x:Name="ContentRoot" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" RenderTransformOrigin="0.5,0.5" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
-                                <Border x:Name="ContentContainer" Background="{StaticResource InterfaceBackgroundColor}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="4,4,2,2" ClipToBounds="True">
+                                <Border x:Name="ContentContainer" Background="{StaticResource InterfaceBackgroundColorBrush}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="4,4,2,2" ClipToBounds="True">
                                     <Border.Effect>
                                         <DropShadowEffect Direction="-90"  Opacity="0.8" Color="Gray" BlurRadius="30" />
                                     </Border.Effect>
@@ -41,7 +41,7 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
 
-                                        <Border Background="{StaticResource ImmersiveSystemAccent}"/>
+                                        <Border Background="{StaticResource ImmersiveSystemAccentBrush}"/>
 
                                         <Border x:Name="Chrome" Grid.Row="1" Width="Auto"  BorderThickness="0" Background="Transparent">
                                             <Grid Height="Auto" Width="Auto" Margin="0" VerticalAlignment="Top">
@@ -49,7 +49,7 @@
                                                     <ColumnDefinition />
                                                     <ColumnDefinition Width="45" />
                                                 </Grid.ColumnDefinitions>
-                                                <ContentControl Content="{TemplateBinding Title}" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="{StaticResource InterfaceForegroundColor}"/>
+                                                <ContentControl Content="{TemplateBinding Title}" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="{StaticResource InterfaceForegroundColorBrush}"/>
                                                 <Button x:Name="CloseButton" Grid.Column="1" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="35" Height="35"  Padding="0" >
                                                     <Button.Content>
                                                         <!--<Canvas Width="15" Height="15">
@@ -60,7 +60,7 @@
                                                                 </Path>
                                                             </Canvas>-->
 
-                                                        <Path Style="{StaticResource Icon_Cancel}" Fill="{StaticResource InterfaceForegroundColor}" Stretch="Uniform" Width="11" Height="11" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                        <Path Style="{StaticResource Icon_Cancel}" Fill="{StaticResource InterfaceForegroundColorBrush}" Stretch="Uniform" Width="11" Height="11" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                     </Button.Content>
                                                 </Button>
                                             </Grid>
@@ -136,11 +136,11 @@
         </Grid.RowDefinitions>
 
 
-        <Border Name="Border_AccentHeader" Background="{StaticResource ImmersiveSystemAccent}"/>
+        <Border Name="Border_AccentHeader" Background="{StaticResource ImmersiveSystemAccentBrush}"/>
 
-        <TextBlock Name="Label_Title" Text="Title" Grid.Row="1" Foreground="{StaticResource InterfaceForegroundColor}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="20,20,20,5"/>
+        <TextBlock Name="Label_Title" Text="Title" Grid.Row="1" Foreground="{StaticResource InterfaceForegroundColorBrush}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="20,20,20,5"/>
 
-        <TextBlock Name="Label_Message" Margin="20,20,20,10" Foreground="{StaticResource InterfaceForegroundColor}" Text="The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog." TextWrapping="Wrap" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <TextBlock Name="Label_Message" Margin="20,20,20,10" Foreground="{StaticResource InterfaceForegroundColorBrush}" Text="The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog." TextWrapping="Wrap" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20">
             <Button x:Name="OKButton" Content="OK" Style="{StaticResource Button_Accent}" MinWidth="80" Click="OKButton_Click" Margin="1"   />

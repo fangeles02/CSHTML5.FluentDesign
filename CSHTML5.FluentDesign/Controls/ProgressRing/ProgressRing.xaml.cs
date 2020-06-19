@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using Windows.Foundation;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -88,7 +89,7 @@ namespace Fluent
         {
 
 
-            var res_color = Application.Current.Resources["ImmersiveSystemAccentBrushBrush"] as SolidColorBrush;
+            var res_color = Application.Current.Resources["ImmersiveSystemAccentBrush"] as SolidColorBrush;
             string s_colour = res_color.ToString().Replace("#FF", "#");
 
 
