@@ -19,6 +19,12 @@
                     <Button Name="Button_Accented" Content="Accented Button" Style="{StaticResource Button_Accent}" Margin="2" Click="Button_Accented_Click"/>
                 </StackPanel>
 
+                <TextBlock Text="Cards" FontWeight="Bold" Margin="0,20,0,5"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button  Margin="2,2,5,2" Style="{StaticResource CardStyle}" Width="200" Height="150" />
+                    <Button  Margin="5,2,2,2" Style="{StaticResource CardStyle}" Width="200" Height="150" />
+                </StackPanel>
+
                 <TextBlock Text="CheckBoxes" FontWeight="Bold" Margin="0,20,0,5"/>
                 <StackPanel Margin="0,0,0,0">
                     <CheckBox Style="{StaticResource CheckBoxStyle}" Content="CheckBox 1" UseSystemFocusVisuals="False" HorizontalAlignment="Left"/>
@@ -58,6 +64,16 @@
                 <TextBlock Text="Expander" FontWeight="Bold" Margin="0,20,0,5"/>
                 <Expander Style="{StaticResource ExpanderStyle}" Header="Click to expand"/>
 
+
+                <TextBlock Text="ComboBox" FontWeight="Bold" Margin="0,20,0,5" HorizontalAlignment="Left"/>
+                <ComboBox Width="300" HorizontalAlignment="Left" UseNativeComboBox="False">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Choice 1"/>
+                        <ComboBoxItem Content="Choice 2"/>
+                        <ComboBoxItem Content="Choice 3"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
                 <TextBlock Text="Text Inputs" FontWeight="Bold" Margin="0,20,0,5"/>
                 <TextBox Width="200" HorizontalAlignment="Left" Margin="2"/>
                 <PasswordBox Width="200" HorizontalAlignment="Left" Margin="2"/>
@@ -87,12 +103,13 @@
 
                 </StackPanel>
 
-                <Grid >
+                <TextBlock Text="AcrylicPanel" FontWeight="Bold" Margin="0,20,0,5"/>
+                <Grid HorizontalAlignment="Right">
                     <Image Source="https://gttp.imgix.net/213339/x/0/sabtang-island-batanes-sightseeing-tricycle-day-tour-with-lunch-transfer-from-basco.jpg" Width="300" Height="200" Stretch="UniformToFill" Visibility="Visible" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-                    <Grid Width="300" Height="200">
-                        <!--<fluent:AcrylicBackground/>-->
-                        <Border Background="#ff00cc"/>
+                    <Grid Width="150" Height="150" HorizontalAlignment="Left" Margin="200,0,0,0">
+                        <fluent:AcrylicBackground/>
+                        <Border Background="White" Opacity="0.1"/>
                     </Grid>
                 </Grid>
 
