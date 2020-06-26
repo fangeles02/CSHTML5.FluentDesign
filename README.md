@@ -35,7 +35,7 @@ Add reference to App.xaml
 
 
 ### Overview
-<img src="./CSHTML5_Overview.png" width="1000"/>
+<img src="./CSHTML5_Overview.png" width="911"/>
 
 
 ### Colors
@@ -173,4 +173,54 @@ _No setting of style is required_
 
 
 ### Controls
-coming soon...
+Create a reference first to Fluent Design
+```xml
+xmlns:fluent="clr-namespace:Fluent;assembly=CSHTML5.FluentDesign"
+```
+
+#### 1. ProgressBar
+##### Properties
+
+|Property Name|Type|Description|
+|-----|-----|-----|
+|Maximum|Double|The maximum value the ProgressBar can hold|
+|Value|Double|The current progress value|
+|RoundedCorners|Bool|Sets if the ProgressBar has rounded corners|
+|Background|Color|Color of the progress holder|
+|Foreground|Bool|Color of the current progress indicator|
+```xml
+  <fluent:ProgressBar Maximum="100" Value="10" Margin="0,5,0,5"/>
+  <fluent:ProgressBar Maximum="100" Value="50" Margin="0,5,0,5"/>
+
+  <fluent:ProgressBar Maximum="100" Value="10" RoundedCorners="True" Margin="0,10,0,5"/>
+  <fluent:ProgressBar Maximum="100" Value="50" RoundedCorners="True" Margin="0,5,0,5"/>
+
+  <fluent:ProgressBar Maximum="100" Value="10" Background="LightGreen" Foreground="Purple" Margin="0,10,0,5"/>
+  <fluent:ProgressBar Maximum="100" Value="50" Background="Blue" RoundedCorners="True" Foreground="Yellow" Margin="0,5,0,5"/>
+```
+
+#### 2. ProgressRing
+_Typical Windows ProgressRing with animation, based on Winstrap_
+##### Properties
+|Property Name|Type|Description|
+|-----|-----|-----|
+|RingColor|Enum|`PROGRESS_WHITE`, `PROGRESS_BLACK` or `PROGRESS_THEME` (`StaticResource ImmersiveSystemAccentBrush`)|
+|RingSize|Enum|`PROGRESS_SMALL`, `PROGRESS_MEDIUM` or `PROGRESS_LARGE`|
+
+#### 3. AcrylicBackground
+_Uses blur backdrop filter, can be rendered by most browsers that supports backdrop filter_
+```xml
+ <fluent:AcrylicBackground/>
+```
+
+#### 3. Dialog
+_A dialog, based on ChildWindow, returns `MessageBoxResult`, awaitable_
+
+```cs
+ await Dialog.ShowAsync("Hello world");
+```
+
+_Complete implementation of the ShowAsync method_
+```cs
+ShowAsync(string Message, string Title, MessageBoxButtons Buttons, string PositiveButtonText, string NegativeButtonText, string NeutralButtonText)
+```
