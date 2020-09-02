@@ -25,5 +25,11 @@ namespace SampleApp
         {
             await Dialog.ShowAsync("This is a accented button");
         }
+
+        private void Button_Test_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(TextBox1.Text);
+            Console.WriteLine(PasswordBox1.Password);
+        }
     }
 }

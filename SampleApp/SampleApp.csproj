@@ -57,10 +57,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bridge.json" />
     <Content Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSHTML5.FluentDesign\CSHTML5.FluentDesign.csproj">
+      <Project>{c03e5902-4843-4a03-990e-7d1d11146625}</Project>
+      <Name>CSHTML5.FluentDesign</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Bridge, Version=17.9.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -75,19 +92,6 @@
       <HintPath>..\packages\CSHTML5.2.0.0-alpha63-083\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bridge.json" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CSHTML5.FluentDesign\CSHTML5.FluentDesign.csproj">
-      <Project>{c03e5902-4843-4a03-990e-7d1d11146625}</Project>
-      <Name>CSHTML5.FluentDesign</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="..\packages\CSHTML5.2.0.0-alpha63-083\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha63-083\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

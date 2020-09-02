@@ -75,9 +75,10 @@
                 </ComboBox>
 
                 <TextBlock Text="Text Inputs" FontWeight="Bold" Margin="0,20,0,5"/>
-                <TextBox Width="200" HorizontalAlignment="Left" Margin="2"/>
-                <PasswordBox Width="200" HorizontalAlignment="Left" Margin="2"/>
+                <TextBox Name="TextBox1" Width="200" HorizontalAlignment="Left" Margin="2" PlaceholderText="Username"/>
+                <PasswordBox Name="PasswordBox1" Width="200" HorizontalAlignment="Left" Margin="2"/>
 
+               
 
                 <StackPanel Width="300" HorizontalAlignment="Left">
                     <TextBlock Text="ProgressBar" FontWeight="Bold" Margin="0,20,0,5"/>
