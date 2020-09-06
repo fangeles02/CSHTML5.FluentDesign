@@ -16,6 +16,8 @@
                 <TextBlock Text="Buttons" FontWeight="Bold" Margin="0,20,0,5"/>
                 <StackPanel Orientation="Horizontal">
                     <Button Name="Button_Normal" Content="Normal Button" Margin="2" Click="Button_Normal_Click"/>
+
+
                     <Button Name="Button_Accented" Content="Accented Button" Style="{StaticResource Button_Accent}" Margin="2" Click="Button_Accented_Click"/>
                 </StackPanel>
 
@@ -26,8 +28,44 @@
 
                 <TextBlock Text="Cards" FontWeight="Bold" Margin="0,20,0,5"/>
                 <StackPanel Orientation="Horizontal">
-                    <Button  Margin="2,2,5,2" Style="{StaticResource CardStyle}" Width="200" Height="150" />
-                    <Button  Margin="5,2,2,2" Style="{StaticResource CardStyle}" Width="200" Height="150" />
+                    <Button  Margin="2,2,5,2" Style="{StaticResource CardStyle}" Width="250" Height="400" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Background="LightGray" Height="150">
+                                <StackPanel VerticalAlignment="Center" Margin="15">
+                                    <TextBlock Text="NOVEMBER" FontSize="22" FontWeight="SemiBold" Opacity="0.8"/>
+                                    <TextBlock Text="26" FontSize="35" FontWeight="SemiBold" Opacity="0.8" Margin="0,15,0,0"/>
+                                </StackPanel>
+                            </Border>
+
+                            <StackPanel Grid.Row="1" Margin="15">
+                                <TextBlock Text="Category" FontSize="11" Opacity="0.8"/>
+                                <TextBlock Text="Contoso marketing customer visit and survey results" TextWrapping="Wrap" FontWeight="SemiBold" Margin="0,5,0,0"/>
+
+                                <TextBlock Text="Tuesday 2:00-4:30 pm" FontWeight="SemiBold" FontSize="11" Margin="0,20,0,0"/>
+                                <TextBlock Text="Conf Room 34/1301" FontSize="11" Opacity="0.8" Margin="0,5,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="15,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                                <HyperlinkButton Content="12 Attendees"  FontSize="12" UseSystemFocusVisuals="False" Foreground="{StaticResource ImmersiveSystemAccentDark1Brush}"/>
+                            </StackPanel>
+
+                            <Border Grid.Row="2" BorderBrush="{StaticResource SystemAltMediumHighColorBrush}" BorderThickness="0,1,0,0" Margin="15,10,15,0">
+                                <Path Style="{StaticResource Icon_Task}" Fill="{StaticResource ImmersiveSystemAccentBrush}" Stretch="Uniform" Width="20" Height="15" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,15,5,15"/>
+
+                            </Border>
+                        </Grid>
+                    </Button>
+                    <Button  Margin="5,2,2,2" Style="{StaticResource CardStyle}" Width="250" Height="400" >
+                        <Grid>
+                            <TextBlock Text="Basic card"/>
+                        </Grid>
+                    </Button>
                 </StackPanel>
 
                 <TextBlock Text="CheckBoxes" FontWeight="Bold" Margin="0,20,0,5"/>
