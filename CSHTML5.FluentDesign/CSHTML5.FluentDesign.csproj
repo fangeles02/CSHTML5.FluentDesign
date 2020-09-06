@@ -48,6 +48,7 @@
     <Compile Include="Controls\Dialog\DialogInterface.xaml.cs">
       <DependentUpon>DialogInterface.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Notifications\Toast.cs" />
     <Compile Include="Controls\ProgressBar\ProgressBar.cs" />
     <Compile Include="Controls\ProgressRing\ProgressRing.xaml.cs">
       <DependentUpon>ProgressRing.xaml</DependentUpon>

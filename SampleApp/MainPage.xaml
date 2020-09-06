@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     FontSize="14"
     xmlns:fluent="clr-namespace:Fluent;assembly=CSHTML5.FluentDesign">
-    <Grid>
+    <Grid Name="Grid1">
         <ScrollViewer>
             <StackPanel Margin="20">
                 <TextBlock Text="CSHTML5.FluentDesign" FontWeight="Light" FontSize="20" x:Name="TextBlock1" Margin="0,20,0,20"/>
@@ -17,6 +17,11 @@
                 <StackPanel Orientation="Horizontal">
                     <Button Name="Button_Normal" Content="Normal Button" Margin="2" Click="Button_Normal_Click"/>
                     <Button Name="Button_Accented" Content="Accented Button" Style="{StaticResource Button_Accent}" Margin="2" Click="Button_Accented_Click"/>
+                </StackPanel>
+
+                <TextBlock Text="Toast" FontWeight="Bold" Margin="0,20,0,5"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="Button_ToastSample" Content="Show toast" Margin="2" Click="Button_ToastSample_Click"/>
                 </StackPanel>
 
                 <TextBlock Text="Cards" FontWeight="Bold" Margin="0,20,0,5"/>

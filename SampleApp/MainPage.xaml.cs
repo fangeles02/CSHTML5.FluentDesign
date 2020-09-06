@@ -31,5 +31,10 @@ namespace SampleApp
             Console.WriteLine(TextBox1.Text);
             Console.WriteLine(PasswordBox1.Password);
         }
+
+        private void Button_ToastSample_Click(object sender, RoutedEventArgs e)
+        {
+            Fluent.Toast.MakeText(Grid1, "Hello world! This is a sample toast message", Fluent.Toast.TOAST_DURATION.LENGTH_SHORT);
+        }
     }
 }
