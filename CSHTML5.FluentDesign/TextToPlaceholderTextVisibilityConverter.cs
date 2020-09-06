@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Data;
 #endif
 
 
-namespace MaterialDesign_Styles_Kit
+namespace FluentDesign_Styles_Kit
 {
     public class TextToPlaceholderTextVisibilityConverter : IValueConverter
     {
