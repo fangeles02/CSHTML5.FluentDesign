@@ -723,7 +723,8 @@
                         <TextBlock  Text="{TemplateBinding PlaceholderText}"
                                            Foreground="DarkGray"
                                            Visibility="{TemplateBinding Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}}"
-                                           VerticalAlignment="Center"
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                           TextWrapping="Wrap"
                                     Margin="10,0,0,0"/>
                         <ContentPresenter x:Name="ContentElement" Margin="10,5,10,5" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
