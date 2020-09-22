@@ -725,7 +725,7 @@
                                            Visibility="{TemplateBinding Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}}"
                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                            TextWrapping="Wrap"
-                                    Margin="10,0,0,0"/>
+                                    Margin="10,5,10,5"/>
                         <ContentPresenter x:Name="ContentElement" Margin="10,5,10,5" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
 
