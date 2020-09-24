@@ -672,6 +672,128 @@
                 <Setter Property="Padding" Value="10,8,10,8"/>
             </Style>-->
 
+    <Style x:Key="UnderlinedTextBox"  TargetType="TextBox" >
+        <Setter Property="AllowDrop"  Value="true" />
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="VerticalContentAlignment"  Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <!--UseSystemFocusVisuals="False"-->
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+
+
+                    <Grid MinHeight="{TemplateBinding MinHeight}">
+
+
+
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ImmersiveSystemAccentBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0,0,0,2"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="CornerRadius" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+
+
+                        <Border Name="Border"  BorderThickness="0,0,0,1" CornerRadius="2" BorderBrush="Gray"/>
+
+                        <TextBlock  Text="{TemplateBinding PlaceholderText}"
+                                           Foreground="DarkGray"
+                                           Visibility="{TemplateBinding Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}}"
+                                           VerticalAlignment="Center"
+                                    Margin="10,0,0,0"/>
+                        <ContentPresenter x:Name="ContentElement" Margin="5,5,5,5" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+
+
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    
+    <Style x:Key="UnderlinedPasswordBox"  TargetType="PasswordBox" >
+        <Setter Property="AllowDrop"  Value="true" />
+        <Setter Property="Background" Value="Transparent"/>
+        <!--UseSystemFocusVisuals="False"-->
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+
+                    <Grid  >
+
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ImmersiveSystemAccentBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0,0,0,2"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="CornerRadius" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+
+
+
+                        <Border Name="Border" Background="{TemplateBinding Background}" BorderThickness="0,0,0,1" CornerRadius="2" BorderBrush="Gray"/>
+
+
+                        <!--<TextBlock  Text="{TemplateBinding PlaceholderText}"
+                                           Foreground="DarkGray"
+                                           Visibility="{TemplateBinding Text, Converter={StaticResource TextToPlaceholderTextVisibilityConverter}}"
+                                           VerticalAlignment="Center"
+                                    Margin="10,0,0,0"/>-->
+
+                        <ContentPresenter x:Name="ContentElement" Margin="3,5,3,5" VerticalAlignment="Center"/>
+
+
+                        <!--<ScrollViewer   x:Name="PART_ContentHost" VerticalScrollBarVisibility="Auto" />-->
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    
+    
+
 
 
 
