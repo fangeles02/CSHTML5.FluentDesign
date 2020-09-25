@@ -20,12 +20,18 @@ CSHTML5.FluentDesign
 
 
 ### Preparation
+
+***Important Note:*** *For NuGet package version 1.0.8 onwards, you are required to indicate the theme color in App.xaml*
+
 Add reference to App.xaml
 
 ```xml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
+             <!--Indicate the theme color, please refer to accent colors-->
+             <ResourceDictionary Source="/CSHTML5.FluentDesign;component/Accents/DefaultBlue.xaml" />
+          
              <!--  Fluent Design Styles and Controls  -->
             <ResourceDictionary Source="/CSHTML5.FluentDesign;component/FluentDesign.xaml" />
         </ResourceDictionary.MergedDictionaries>
@@ -39,18 +45,88 @@ Add reference to App.xaml
 
 
 ### Colors
-_Currently, only the Windows 10's Default Blue Color is available and uses the Light Theme._
 
-#### Accent Color
+#### Accent Colors
+<img src="./AccentColors.png"/>
+Left to right, top to bottom
+
+- YellowGold
+- Gold
+- OrangeBright
+- OrangeDark
+- Rust
+- PaleRust
+- BrickRed
+- ModRed
+
+<br/>
+
+* PaleRed
+* Red
+* RoseBright
+* Rose
+* PlumLight
+* Plum
+* OrchidLight
+* Orchid
+
+<br/>
+
+- DefaultBlue
+- NavyBlue
+- PurpleShadow
+- PurpleShadowDark
+- IrisPastel
+- IrisSpring
+- VioletRedLight
+- VioletRed
+
+<br/>
+
+- CoolBlueBright
+- CoolBlue
+- SeaFoam
+- SeaFoamTeal
+- MintLight
+- MintDark
+- TurfGreen
+- SportGreen
+
+<br/>
+
+- Gray
+- GrayBrown
+- SteelBlue
+- MetalBlue
+- PaleMoss
+- Moss
+- MeadowGreen
+- Green
+
+<br/>
+
+- Overcast
+- Storm
+- BlueGray
+- GrayDark
+- LiddyGreen
+- Sage
+- CamouflageDesert
+- Camouflage
+
+
+
+
+#### Accent Color Brushes
 |Sample|Color|Brush|
 |-----|-----|-----|
-|![#a6d8ff](https://placehold.it/30/a6d8ff/000000?text=+)|ImmersiveSystemAccentLight3|ImmersiveSystemAccentLight3Brush|
-|![#76b9ed](https://placehold.it/30/76b9ed/000000?text=+)|ImmersiveSystemAccentLight2|ImmersiveSystemAccentLight2Brush|
-|![#429ce3](https://placehold.it/30/429ce3/000000?text=+)|ImmersiveSystemAccentLight1|ImmersiveSystemAccentLight1Brush|
+|![#4da1e3](https://placehold.it/30/4da1e3/000000?text=+)|ImmersiveSystemAccentLight3|ImmersiveSystemAccentLight3Brush|
+|![#3393df](https://placehold.it/30/3393df/000000?text=+)|ImmersiveSystemAccentLight2|ImmersiveSystemAccentLight2Brush|
+|![#1a86db](https://placehold.it/30/1a86db/000000?text=+)|ImmersiveSystemAccentLight1|ImmersiveSystemAccentLight1Brush|
 |![#0078d7](https://placehold.it/30/0078d7/000000?text=+)|ImmersiveSystemAccent|ImmersiveSystemAccentBrush|
-|![#005a9e](https://placehold.it/30/005a9e/000000?text=+)|ImmersiveSystemAccentDark1|ImmersiveSystemAccentDark1Brush|
-|![#004275](https://placehold.it/30/004275/000000?text=+)|ImmersiveSystemAccentDark2|ImmersiveSystemAccentDark2Brush|
-|![#002642](https://placehold.it/30/002642/000000?text=+)|ImmersiveSystemAccentDark3|ImmersiveSystemAccentDark3Brush|
+|![#006cc2](https://placehold.it/30/006cc2/000000?text=+)|ImmersiveSystemAccentDark1|ImmersiveSystemAccentDark1Brush|
+|![#0060ac](https://placehold.it/30/0060ac/000000?text=+)|ImmersiveSystemAccentDark2|ImmersiveSystemAccentDark2Brush|
+|![#005497](https://placehold.it/30/005497/000000?text=+)|ImmersiveSystemAccentDark3|ImmersiveSystemAccentDark3Brush|
 
 **Usage:**
 ```xml
@@ -58,7 +134,7 @@ _Currently, only the Windows 10's Default Blue Color is available and uses the L
 ```
 
 
-#### Base Color
+#### Base Color Brushes
 
 
 |Light|Dark|Color|Brush|
@@ -70,7 +146,7 @@ _Currently, only the Windows 10's Default Blue Color is available and uses the L
 |![#cccccc](https://placehold.it/30/cccccc/000000?text=+)|![#333333](https://placehold.it/30/333333/000000?text=+)|SystemBaseLowColor|SystemBaseLowColorBrush|
 
 
-#### Alt Color
+#### Alt Color Brushes
 
 
 |Light|Dark|Color|Brush|
@@ -164,10 +240,16 @@ _You need to set the `UseNativeComboBox` to `False`_
 ```
 
 #### 11. TextBox and PasswordBox
-_No setting of style is required_
+_The default style has accented borders when focused. No setting of style is required_
 ```xml
 <TextBox Width="200"/>
 <PasswordBox Width="200"/>
+```
+
+_For underlined styles, use the style_ `UnderlinedTextBox` _and_ `UnderlinedPasswordBox`
+```xml
+<TextBox Width="200" Style="{StaticResource UnderlinedTextBox}"/>
+<PasswordBox Width="200" Style="{StaticResource UnderlinedPasswordBox}"/>
 ```
 
 
@@ -213,7 +295,7 @@ _Uses blur backdrop filter, can be rendered by most browsers that supports backd
  <fluent:AcrylicBackground/>
 ```
 
-#### 3. Dialog
+#### 4. Dialog
 _A dialog, based on ChildWindow, returns `MessageBoxResult`, awaitable_
 
 ```cs
@@ -223,4 +305,20 @@ _A dialog, based on ChildWindow, returns `MessageBoxResult`, awaitable_
 _Complete implementation of the ShowAsync method_
 ```cs
 ShowAsync(string Message, string Title, MessageBoxButtons Buttons, string PositiveButtonText, string NegativeButtonText, string NeutralButtonText)
+```
+
+
+#### 5. Toast
+_Displays a toast message, based on Android Toast control_
+
+Syntax:
+```cs
+using Fluent;
+
+Toast.MakeText(HostPanel, Message, Duration);
+```
+
+Example:
+```cs
+Toast.MakeText(MainGrid, "Hello world!", Toast.TOAST_DURATION.LENGTH_SHORT);
 ```
