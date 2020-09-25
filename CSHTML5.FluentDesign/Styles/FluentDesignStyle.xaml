@@ -15,6 +15,10 @@
     <Style TargetType="Label" BasedOn="{StaticResource baseStyle}"/>
     <Style TargetType="Button" BasedOn="{StaticResource baseStyle}"/>-->
 
+
+
+
+
     <!--Interface Colors-->
 
 
@@ -60,27 +64,6 @@
 
 
 
-    <!--Accent Colors-->
-    <Color x:Key="ImmersiveSystemAccentLight3">#a9d6ff</Color>
-    <Color x:Key="ImmersiveSystemAccentLight2">#7bb6ed</Color>
-    <Color x:Key="ImmersiveSystemAccentLight1">#4c97e2</Color>
-    <Color x:Key="ImmersiveSystemAccent">#2370d6</Color>
-    <Color x:Key="ImmersiveSystemAccentDark1">#17559e</Color>
-    <Color x:Key="ImmersiveSystemAccentDark2">#0e3e75</Color>
-    <Color x:Key="ImmersiveSystemAccentDark3">#052442</Color>
-
-
-
-    <SolidColorBrush x:Key="ImmersiveSystemAccentLight3Brush" Color="{StaticResource ImmersiveSystemAccentLight3}"/>
-    <SolidColorBrush x:Key="ImmersiveSystemAccentLight2Brush" Color="{StaticResource ImmersiveSystemAccentLight2}"/>
-    <SolidColorBrush x:Key="ImmersiveSystemAccentLight1Brush" Color="{StaticResource ImmersiveSystemAccentLight1}"/>
-    <SolidColorBrush x:Key="ImmersiveSystemAccentBrush" Color="{StaticResource ImmersiveSystemAccent}"/>
-    <SolidColorBrush x:Key="ImmersiveSystemAccentDark1Brush" Color="{StaticResource ImmersiveSystemAccentDark1}"/>
-    <SolidColorBrush x:Key="ImmersiveSystemAccentDark2Brush" Color="{StaticResource ImmersiveSystemAccentDark2}"/>
-    <SolidColorBrush x:Key="ImmersiveSystemAccentDark3Brush" Color="{StaticResource ImmersiveSystemAccentDark3}"/>
-
-    <SolidColorBrush x:Key="PrimaryColor_Alt" Color="#e6ffffff"/>
-    <SolidColorBrush x:Key="ImmersiveSystemAccentBrush_Alt" Color="#e6ffffff"/>
 
 
 
@@ -1213,7 +1196,7 @@
                            
                         </Border>
 
-                        <Border Name="Path_Icon" Grid.Column="0"  Background="{StaticResource ImmersiveSystemAccentBrush_Alt}"  Width="10" Height="10" CornerRadius="10" VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center"/>
+                        <Border Name="Path_Icon" Grid.Column="0"  Background="Transparent"  Width="10" Height="10" CornerRadius="10" VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center"/>
 
 
 
@@ -1306,6 +1289,10 @@
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="InnerInnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
                                         </ObjectAnimationUsingKeyFrames>
+
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="Path_Icon">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PrimaryColor_Alt}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState Name="CheckedPointerOver">
@@ -1330,6 +1317,10 @@
 
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="InnerInnerBorder">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ImmersiveSystemAccentDark1Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="Path_Icon">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PrimaryColor_Alt}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1415,7 +1406,7 @@
                             </Border>
                         </Border>
 
-                        <Path Name="Path_Icon" Grid.Column="0" Style="{StaticResource Icon_Checkmark}" Fill="{StaticResource ImmersiveSystemAccentBrush_Alt}" Stretch="Uniform" Width="13" Height="13" VerticalAlignment="Center" Margin="0,3,0,0" HorizontalAlignment="Center"/>
+                        <Path Name="Path_Icon" Grid.Column="0" Style="{StaticResource Icon_Checkmark}" Fill="Transparent" Stretch="Uniform" Width="13" Height="13" VerticalAlignment="Center" Margin="0,3,0,0" HorizontalAlignment="Center"/>
 
 
 

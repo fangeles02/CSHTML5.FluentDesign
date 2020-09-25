@@ -1,0 +1,32 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Accent Colors-->
+    <Color x:Key="ImmersiveSystemAccentLight3">#df7174</Color>
+    <Color x:Key="ImmersiveSystemAccentLight2">#da5d60</Color>
+    <Color x:Key="ImmersiveSystemAccentLight1">#d6484c</Color>
+    <Color x:Key="ImmersiveSystemAccent">#d13438</Color>
+    <Color x:Key="ImmersiveSystemAccentDark1">#bc2f32</Color>
+    <Color x:Key="ImmersiveSystemAccentDark2">#a72a2d</Color>
+    <Color x:Key="ImmersiveSystemAccentDark3">#922427</Color>
+
+
+
+    <SolidColorBrush x:Key="ImmersiveSystemAccentLight3Brush" Color="{StaticResource ImmersiveSystemAccentLight3}"/>
+    <SolidColorBrush x:Key="ImmersiveSystemAccentLight2Brush" Color="{StaticResource ImmersiveSystemAccentLight2}"/>
+    <SolidColorBrush x:Key="ImmersiveSystemAccentLight1Brush" Color="{StaticResource ImmersiveSystemAccentLight1}"/>
+    <SolidColorBrush x:Key="ImmersiveSystemAccentBrush" Color="{StaticResource ImmersiveSystemAccent}"/>
+    <SolidColorBrush x:Key="ImmersiveSystemAccentDark1Brush" Color="{StaticResource ImmersiveSystemAccentDark1}"/>
+    <SolidColorBrush x:Key="ImmersiveSystemAccentDark2Brush" Color="{StaticResource ImmersiveSystemAccentDark2}"/>
+    <SolidColorBrush x:Key="ImmersiveSystemAccentDark3Brush" Color="{StaticResource ImmersiveSystemAccentDark3}"/>
+
+
+
+
+    <SolidColorBrush x:Key="PrimaryColor_Alt" Color="#e6ffffff"/>
+    <SolidColorBrush x:Key="ImmersiveSystemAccentBrush_Alt" Color="#e6ffffff"/>
+
+
+
+</ResourceDictionary>

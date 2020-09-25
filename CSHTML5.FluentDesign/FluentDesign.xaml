@@ -5,7 +5,5 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Styles/FluentDesignStyle.xaml"/>
-
-        
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

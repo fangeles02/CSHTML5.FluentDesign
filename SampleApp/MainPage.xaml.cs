@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fluent;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace SampleApp
 
         private void Button_ToastSample_Click(object sender, RoutedEventArgs e)
         {
-            Fluent.Toast.MakeText(Grid1, "Hello world! This is a sample toast message", Fluent.Toast.TOAST_DURATION.LENGTH_SHORT);
+            Toast.MakeText(Grid1, "Hello world! This is a sample toast message", Toast.TOAST_DURATION.LENGTH_SHORT);
         }
     }
 }

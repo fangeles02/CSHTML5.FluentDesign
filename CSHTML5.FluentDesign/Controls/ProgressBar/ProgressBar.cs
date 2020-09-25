@@ -27,7 +27,9 @@ namespace Fluent
         public new Brush Foreground
         {
             get; set;
-        } = (Brush)Colors.DodgerBlue;
+        } = (Brush)Application.Current.Resources["ImmersiveSystemAccentBrush"];
+        
+  
 
 
         public new Brush Background

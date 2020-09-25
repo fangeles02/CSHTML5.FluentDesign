@@ -7,6 +7,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--Indicate the theme color, please refer to accent colors-->
+                <ResourceDictionary Source="/CSHTML5.FluentDesign;component/Accents/DefaultBlue.xaml" />
+                
+                <!--Fluent design themes and controls-->
                 <ResourceDictionary Source="/CSHTML5.FluentDesign;component/FluentDesign.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
