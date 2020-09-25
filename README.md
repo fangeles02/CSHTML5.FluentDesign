@@ -9,6 +9,10 @@ CSHTML5.FluentDesign
 </h6>
 
 
+<h6 align="center">
+  Note: This package is tested and works well on CSHTML5 version 2.0.0-alpha63-083 (NuGet)
+</h6>
+
 
 ### Install
 
@@ -21,7 +25,10 @@ CSHTML5.FluentDesign
 
 ### Preparation
 
-***Important Note:*** *For NuGet package version 1.0.8 onwards, you are required to indicate the theme color in App.xaml*
+```diff
+- Important Note: For NuGet package version 1.0.8 onwards, you are required to indicate the theme color in App.xaml
+```
+
 
 Add reference to App.xaml
 
