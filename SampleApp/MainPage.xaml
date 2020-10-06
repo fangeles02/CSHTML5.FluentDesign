@@ -21,6 +21,12 @@
                     <Button Name="Button_Accented" Content="Accented Button" Style="{StaticResource Button_Accent}" Margin="2" Click="Button_Accented_Click"/>
                 </StackPanel>
 
+                <TextBlock Text="Input Dialogs" FontWeight="Bold" Margin="0,20,0,5"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="Button_InputDialogSample2" Content="Show regular" Margin="2" Click="Button_InputDialogSample2_Click"/>
+                    <Button Name="Button_InputDialogSample" Content="Show accented" Margin="2" Click="Button_InputDialogSample_Click"/>
+                </StackPanel>
+
                 <TextBlock Text="Toast" FontWeight="Bold" Margin="0,20,0,5"/>
                 <StackPanel Orientation="Horizontal">
                     <Button Name="Button_ToastSample" Content="Show toast" Margin="2" Click="Button_ToastSample_Click"/>

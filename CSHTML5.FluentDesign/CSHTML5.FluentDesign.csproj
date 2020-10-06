@@ -48,6 +48,10 @@
     <Compile Include="Controls\Dialog\DialogInterface.xaml.cs">
       <DependentUpon>DialogInterface.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\InputDialog\InputDialog.cs" />
+    <Compile Include="Controls\InputDialog\InputDialogInterface.xaml.cs">
+      <DependentUpon>InputDialogInterface.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Notifications\Toast.cs" />
     <Compile Include="Controls\ProgressBar\ProgressBar.cs" />
     <Compile Include="Controls\ProgressRing\ProgressRing.xaml.cs">
@@ -249,6 +253,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="Controls\InputDialog\InputDialogInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
     <Page Include="Controls\ProgressRing\ProgressRing.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
