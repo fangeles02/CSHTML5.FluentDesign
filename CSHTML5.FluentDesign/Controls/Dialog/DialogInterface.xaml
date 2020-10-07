@@ -22,7 +22,7 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="BorderBrush" Value="{StaticResource ImmersiveSystemAccentBrush}" />
+  
             <Setter Property="OverlayBrush" Value="#FFFFFF" />
             <Setter Property="OverlayOpacity" Value="0.6" />
             <Setter Property="Template">

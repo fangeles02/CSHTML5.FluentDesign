@@ -155,7 +155,7 @@
         <Setter Property="Foreground" Value="{StaticResource InterfaceForegroundColorBrush}"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Padding" Value="0,1,0,1"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -258,9 +258,7 @@
                             <ContentPresenter x:Name="ContentPresenter"
                                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                                 Content="{TemplateBinding Content}"
-                                                Margin="{TemplateBinding Padding}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                Margin="{TemplateBinding Padding}"/>
 
 
                             <Border.Effect>
@@ -581,6 +579,7 @@
         <Setter Property="BorderBrush" Value="Gray"/>
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Background" Value="{StaticResource SystemAltHighColorBrush}"/>
+       
         <!--<Setter Property="Height" Value="35"/>-->
         <Setter Property="Template">
             <Setter.Value>
@@ -595,7 +594,7 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBox  x:Name="TextBox" IsEnabled="False"  Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" BorderThickness="0" />
+                                    <TextBox  x:Name="TextBox" IsEnabled="False" FontWeight="Normal" Style="{StaticResource TextBoxStyle}"  Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" BorderThickness="0" />
                                     <Border Width="35" Grid.Column="1">
                                         <Path Style="{StaticResource Icon_Calendar}" Fill="{StaticResource InterfaceForegroundColorBrush}" Stretch="Uniform" Width="12" Height="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
@@ -630,7 +629,7 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBox  x:Name="TextBox" IsEnabled="False"  Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" BorderThickness="0" />
+                                    <TextBox  x:Name="TextBox" IsEnabled="False" Style="{StaticResource TextBoxStyle}" FontWeight="Normal" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" BorderThickness="0" />
                                     <Border Width="35" Grid.Column="1">
                                         <Path Style="{StaticResource Icon_Clock}" Fill="{StaticResource InterfaceForegroundColorBrush}" Stretch="Uniform" Width="12" Height="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
@@ -780,7 +779,7 @@
 
 
 
-    <Style TargetType="TextBox" >
+    <Style x:Key="TextBoxStyle" TargetType="TextBox" >
         <Setter Property="AllowDrop"  Value="true" />
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="{StaticResource SystemAltHighColorBrush}"/>
@@ -846,15 +845,7 @@
 
 
 
-    <!--<Style TargetType="PasswordBox">
-                <Setter Property="BorderBrush" Value="Gray"/>
-                <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="Background" Value="{StaticResource SystemAltHighColorBrush}"/>
-                <Setter Property="Padding" Value="10,8,10,8"/>
-            </Style>-->
-
-
-    <Style TargetType="PasswordBox" >
+    <Style x:Key="PasswordBoxStyle"  TargetType="PasswordBox" >
         <Setter Property="AllowDrop"  Value="true" />
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="{StaticResource SystemAltHighColorBrush}"/>
@@ -910,6 +901,17 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+
+    <!--For explicit styles of TextBox and PasswordBox-->
+    <Style  TargetType="PasswordBox" BasedOn="{StaticResource PasswordBoxStyle}"/>
+    <Style  TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle}"/>
+
+
+
+    
+    
 
 
     <Style x:Key="Link"  TargetType="HyperlinkButton">
