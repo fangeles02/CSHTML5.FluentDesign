@@ -10,7 +10,7 @@ CSHTML5.FluentDesign
 
 
 <h6 align="center">
-  Note: This package is tested and works well on CSHTML5 version 2.0.0-alpha63-083 (NuGet)
+  Note: Current version requires at least package version 2.0.0-alpha73-093 of CSHTML5 (NuGet)
 </h6>
 
 
@@ -27,6 +27,7 @@ CSHTML5.FluentDesign
 
 ```diff
 - Important Note: For NuGet package version 1.0.8 onwards, you are required to indicate the theme color in App.xaml
+- For NuGet package version 1.1.0 onwards, apply TextBox and PasswordBox Styles explicitly
 ```
 
 
@@ -247,10 +248,10 @@ _You need to set the `UseNativeComboBox` to `False`_
 ```
 
 #### 11. TextBox and PasswordBox
-_The default style has accented borders when focused. No setting of style is required_
+_The default style has accented borders when focused. Use_ `TextBoxStyle` _and_ `PasswordBoxStyle`
 ```xml
-<TextBox Width="200"/>
-<PasswordBox Width="200"/>
+<TextBox Width="200" Style="{StaticResource TextBoxStyle}"/>
+<PasswordBox Width="200" Style="{StaticResource PasswordBoxStyle}"/>
 ```
 
 _For underlined styles, use the style_ `UnderlinedTextBox` _and_ `UnderlinedPasswordBox`
