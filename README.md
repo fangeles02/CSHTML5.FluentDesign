@@ -314,8 +314,26 @@ _Complete implementation of the ShowAsync method_
 ShowAsync(string Message, string Title, MessageBoxButtons Buttons, string PositiveButtonText, string NegativeButtonText, string NeutralButtonText)
 ```
 
+#### 5. InputDialog
+_An input dialog (InputBox), based on ChildWindow, returns `InputDialogResult` (MessageBoxResult and inputted value), awaitable_
 
-#### 5. Toast
+```cs
+ //regular input dialog
+ await InputDialog.ShowAsync("Hello world");
+ 
+ //accented input dialog
+ await InputDialog.ShowAccentedAsync("Hello world");
+```
+
+_Complete implementation of the ShowAsync and ShowAccentedAsync method_
+```cs
+ShowAsync(string Message, string Title)
+ShowAccentedAsync(string Message, string Title)
+```
+
+
+
+#### 6. Toast
 _Displays a toast message, based on Android Toast control_
 
 Syntax:
