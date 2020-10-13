@@ -57,5 +57,31 @@ namespace SampleApp
                 Toast.MakeText(Grid1, $"You have entered: {res.Input}", Toast.TOAST_DURATION.LENGTH_SHORT);
             }
         }
+
+        private void Button_ModalSample_Click(object sender, RoutedEventArgs e)
+        {
+            ChildWindow childwindow1 = new ChildWindow { Width = 500, Height = 400, Title = "Dynamic Modal", FontSize = 14 };
+            childwindow1.Style = (Style)Application.Current.Resources["ModalStyle"];
+            childwindow1.ShowAndWait();
+
+            StackPanel pnl1 = new StackPanel();
+            TextBlock txt1 = new TextBlock { Text = "This is dynamically created textblock" };
+            Button btn1 = new Button { Content = "Dynamic button", Margin = new Thickness(0, 10, 0, 0), HorizontalAlignment = HorizontalAlignment.Left };
+            btn1.Click += new RoutedEventHandler((object obj, RoutedEventArgs args) =>
+            {
+                Toast.MakeText(Grid1, "You have clicked the dynamic button", Toast.TOAST_DURATION.LENGTH_SHORT);
+            });
+            pnl1.Children.Add(txt1);
+            pnl1.Children.Add(btn1);
+
+            childwindow1.Content = pnl1;
+
+        }
+
+        private void Button_ModalSample2_Click(object sender, RoutedEventArgs e)
+        {
+            SampleModal sm = new SampleModal();
+            sm.ShowAndWait();
+        }
     }
 }

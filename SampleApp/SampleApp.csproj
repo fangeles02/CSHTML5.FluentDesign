@@ -49,6 +49,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleModal.xaml.cs">
+      <DependentUpon>SampleModal.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.xaml">
@@ -92,6 +95,12 @@
       <HintPath>..\packages\CSHTML5.2.0.0-alpha73-093\lib\net40\CSHTML5.Stubs.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SampleModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
   </ItemGroup>
   <Import Project="..\packages\CSHTML5.2.0.0-alpha73-093\build\CSHTML5.targets" Condition="Exists('..\packages\CSHTML5.2.0.0-alpha73-093\build\CSHTML5.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

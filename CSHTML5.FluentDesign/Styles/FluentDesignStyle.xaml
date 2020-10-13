@@ -507,15 +507,15 @@
 
     <!--x:Key="ChildWindowStyle1"-->
 
-    <Style  TargetType="ChildWindow">
+    <Style x:Key="ModalStyle" TargetType="ChildWindow">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="BorderBrush" Value="{StaticResource ImmersiveSystemAccentBrush}" />
-        <Setter Property="OverlayBrush" Value="#7F000000" />
-        <Setter Property="OverlayOpacity" Value="0" />
+
+        <Setter Property="OverlayBrush" Value="#BF000000" />
+        <Setter Property="OverlayOpacity" Value="0.6" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ChildWindow">
@@ -524,11 +524,11 @@
                         <Border x:Name="ContentRoot" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" RenderTransformOrigin="0.5,0.5" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
                             <Border x:Name="ContentContainer" Background="{StaticResource InterfaceBackgroundColorBrush}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="4,4,2,2" ClipToBounds="True">
                                 <Border.Effect>
-                                    <DropShadowEffect Direction="-90"  Opacity="0.8" Color="Gray" BlurRadius="30" />
+                                    <DropShadowEffect Direction="-90"  Opacity="0.4" Color="#000000" BlurRadius="40" />
                                 </Border.Effect>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="4" />
+                                        <RowDefinition Height="4"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
@@ -536,16 +536,16 @@
                                     <Border Background="{StaticResource ImmersiveSystemAccentBrush}"/>
 
                                     <Border x:Name="Chrome" Grid.Row="1" Width="Auto"  BorderThickness="0" Background="Transparent">
-                                        <Grid Height="Auto" Width="Auto" Margin="23,13,23,13" VerticalAlignment="Top">
+                                        <Grid Height="55" Width="Auto" Margin="0" VerticalAlignment="Top">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition />
                                                 <ColumnDefinition Width="45" />
                                             </Grid.ColumnDefinitions>
-                                            <ContentControl Content="{TemplateBinding Title}" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="{StaticResource InterfaceForegroundColorBrush}"/>
-                                            <Button x:Name="CloseButton" Grid.Column="1" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="35" Height="35"  Padding="0" >
+                                            <ContentControl Content="{TemplateBinding Title}" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,0,0" Foreground="{StaticResource InterfaceForegroundColorBrush}"/>
+                                            <Button x:Name="CloseButton" Grid.Column="1" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="35" Height="35"  Padding="0" Margin="0,0,10,0">
                                                 <Button.Content>
                                                     <!--<Canvas Width="15" Height="15">
-                                                                <Path Fill="{StaticResource ImmersiveSystemAccentBrush_Alt}" Data="{Binding Source={StaticResource Icons}, Path=Cancel_50px }" >
+                                                                <Path Fill="{StaticResource PrimaryColor_Alt}" Data="{Binding Source={StaticResource Icons}, Path=Cancel_50px }" >
                                                                     <Path.RenderTransform>
                                                                         <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
                                                                     </Path.RenderTransform>
@@ -557,8 +557,8 @@
                                             </Button>
                                         </Grid>
                                     </Border>
-                                    <Border Background="{TemplateBinding Background}" Margin="0" Grid.Row="2">
-                                        <ContentPresenter x:Name="ContentPresenter" Margin="23,0,23,13" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Border Background="{TemplateBinding Background}" Margin="20,0,20,20" Grid.Row="2">
+                                        <ContentPresenter x:Name="ContentPresenter" Margin="0" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                     </Border>
                                 </Grid>
                             </Border>
