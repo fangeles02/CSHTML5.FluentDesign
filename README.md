@@ -13,6 +13,9 @@ CSHTML5.FluentDesign
   Note: Current version requires at least package version 2.0.0-alpha73-093 of CSHTML5 (NuGet)
 </h6>
 
+View the demo here:
+<http://www.cshtml5fluentdesignshowcase.epizy.com/>
+
 
 ### Install
 
