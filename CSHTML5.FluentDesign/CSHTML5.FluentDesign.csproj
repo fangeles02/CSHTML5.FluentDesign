@@ -52,8 +52,8 @@
     <Compile Include="Controls\InputDialog\InputDialogInterface.xaml.cs">
       <DependentUpon>InputDialogInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Notifications\StatusPopup.xaml.cs">
-      <DependentUpon>StatusPopup.xaml</DependentUpon>
+    <Compile Include="Controls\Notifications\FluentToast.xaml.cs">
+      <DependentUpon>FluentToast.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Notifications\Toast.cs" />
     <Compile Include="Controls\ProgressBar\ProgressBar.cs" />
@@ -260,7 +260,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Controls\Notifications\StatusPopup.xaml">
+    <Content Include="Controls\Notifications\FluentToast.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>

@@ -41,18 +41,20 @@ namespace Fluent
             OuterControl.Name = "OuterControl1";
             OuterControl.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
             OuterControl.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Bottom;
-            //OuterControl.Margin = new Thickness(10);
+            OuterControl.Margin = new Thickness(10);
             OuterControl.ClipToBounds = true;
+            OuterControl.CornerRadius = new CornerRadius(3);
+            OuterControl.Opacity = 0;
 
 
-   
+
 
 
             Grid grid1 = new Grid();
 
 
 
-            Fluent.AcrylicBackground acrylic1 = new AcrylicBackground();
+            Fluent.AcrylicBackground acrylic1 = new AcrylicBackground { HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch };
             grid1.Children.Add(acrylic1);
 
             Border border2 = new Border();
@@ -82,8 +84,17 @@ namespace Fluent
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(d_duration);
-            timer.Tick += new EventHandler<object>((object sender, object args) =>
+            timer.Tick += new EventHandler<object>(async (object sender, object args) =>
             {
+                DoubleAnimation doubleAnimation2 = new DoubleAnimation { From = 1.0, To = 0.0, Duration = new Duration(TimeSpan.FromMilliseconds(500)), EasingFunction = new EasingFunctionBase { EasingMode = EasingMode.EaseOut } };
+                Storyboard.SetTarget(doubleAnimation2, OuterControl);
+                Storyboard.SetTargetProperty(doubleAnimation2, new PropertyPath(OpacityProperty));
+
+                Storyboard storyBoard2 = new Storyboard();
+                storyBoard2.Children.Add(doubleAnimation2);
+                storyBoard2.Begin();
+
+                await Task.Delay(500);
                 //remove from parent
                 ParentControl.Children.Remove(OuterControl);
                 timer.Stop();
@@ -92,12 +103,12 @@ namespace Fluent
             ParentControl.Children.Add(OuterControl);
 
 
-            TranslateTransform translateTransform1 = new TranslateTransform();
-            OuterControl.RenderTransform = translateTransform1;
+      
 
-            DoubleAnimation doubleAnimation1 = new DoubleAnimation { From = Convert.ToInt32(OuterControl.ActualHeight / 2), To = -500, Duration = new Duration(TimeSpan.FromMilliseconds(3000)) };
+            DoubleAnimation doubleAnimation1 = new DoubleAnimation {From = 0.0, To = 1.0, Duration = new Duration(TimeSpan.FromMilliseconds(500)), EasingFunction = new EasingFunctionBase { EasingMode = EasingMode.EaseOut } };
             Storyboard.SetTarget(doubleAnimation1, OuterControl);
-            Storyboard.SetTargetProperty(doubleAnimation1, new PropertyPath("()"));
+            Storyboard.SetTargetProperty(doubleAnimation1, new PropertyPath(OpacityProperty));
+
             Storyboard storyBoard1 = new Storyboard();
             storyBoard1.Children.Add(doubleAnimation1);
             storyBoard1.Begin();
@@ -112,6 +123,8 @@ namespace Fluent
 
 
         }
+
+
 
 
     }

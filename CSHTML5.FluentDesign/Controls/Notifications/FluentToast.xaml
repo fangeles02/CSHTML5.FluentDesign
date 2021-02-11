@@ -1,11 +1,10 @@
 ﻿<UserControl
     Name="UserControl1"
-    x:Class="Fluent.StatusPopup"
+    x:Class="Fluent.FluentToast"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     HorizontalAlignment="Right" 
     VerticalAlignment="Top"
-    Loaded="Page_Loaded"
      MaxWidth="300"
     xmlns:fluent="clr-namespace:Fluent">
     <UserControl.RenderTransform>
@@ -26,12 +25,11 @@
             </Storyboard>
 
             <Storyboard x:Name="Hide_StatusPopup">
-                <DoubleAnimation Storyboard.TargetName="UserControl1" Storyboard.TargetProperty="Opacity" To="0" Duration="00:00:0.800">
+                <DoubleAnimation Storyboard.TargetName="UserControl1" Storyboard.TargetProperty="(RenderTransform).X" To="300" Duration="00:00:0.800">
                     <DoubleAnimation.EasingFunction>
                         <CubicEase/>
                     </DoubleAnimation.EasingFunction>
                 </DoubleAnimation>
-
             </Storyboard>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -54,7 +52,7 @@
                 <fluent:AcrylicBackground/>
                 <Border Background="{StaticResource InterfaceBackgroundColorBrush}" Opacity="0.5"/>
 
-                <ContentControl Name="ContentHolder" Margin="15,30,30,30">
+                <ContentControl Name="ContentHolder" Margin="15">
                     
                 </ContentControl>
             </Grid>

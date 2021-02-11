@@ -10,14 +10,14 @@ namespace SampleApp
 {
     public partial class MainPage : Page
     {
-        StatusPopup popupcontrol;
+        FluentToast popupcontrol;
         public MainPage()
         {
             this.InitializeComponent();
 
             // Enter construction logic here...
 
-            popupcontrol = new StatusPopup(Grid1);
+            popupcontrol = new FluentToast(Grid1);
         }
 
         private async void Button_Normal_Click(object sender, RoutedEventArgs e)
@@ -89,7 +89,72 @@ namespace SampleApp
 
         private void Button_StatusPopup1_Click(object sender, RoutedEventArgs e)
         {
-            popupcontrol.ShowMessage("The quick brown fox jumps over the lazy dog.", 3);
+            try
+            {
+                int d_progress = int.Parse(TextBox_Progress.Text);
+
+                if (TextBox_ProgressTitle.Text.Length == 0)
+                {
+                    //message only
+                    popupcontrol.ShowWithProgress(TextBox_ProgressMessage.Text, d_progress);
+                }
+                else
+                {
+                    //message and title
+                    popupcontrol.ShowWithProgress(TextBox_ProgressMessage.Text, TextBox_ProgressTitle.Text, d_progress);
+                }
+
+
+            }
+            catch(Exception)
+            {
+                if(TextBox_ProgressTitle.Text.Length == 0)
+                {
+                    //message only
+                    popupcontrol.Show(TextBox_ProgressMessage.Text, 3000);
+                }
+                else
+                {
+                    //message and title
+                    popupcontrol.Show(TextBox_ProgressMessage.Text, TextBox_ProgressTitle.Text, 3000);
+                }
+            }
+
+           
+        }
+
+        private void Button_Decrement_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int d_current_progress = popupcontrol.GetProgressValue();
+                int d_value = int.Parse(TextBox_Progress.Text);
+
+                int d_new_value = d_current_progress - d_value;
+
+                popupcontrol.SetProgress(d_new_value);
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+
+        private void Button_Increment_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int d_current_progress = popupcontrol.GetProgressValue();
+                int d_value = int.Parse(TextBox_Progress.Text);
+
+                int d_new_value = d_current_progress + d_value;
+
+                popupcontrol.SetProgress(d_new_value);
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
