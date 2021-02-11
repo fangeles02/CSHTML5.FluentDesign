@@ -14,9 +14,13 @@ namespace SampleApp
             this.InitializeComponent();
 
             // Enter construction logic here...
+         
+          
 
             var mainPage = new MainPage();
             Window.Current.Content = mainPage;
+
+            
         }
     }
 }

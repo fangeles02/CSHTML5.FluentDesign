@@ -1,0 +1,66 @@
+﻿<UserControl
+    Name="UserControl1"
+    x:Class="Fluent.StatusPopup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    HorizontalAlignment="Right" 
+    VerticalAlignment="Top"
+    Loaded="Page_Loaded"
+     MaxWidth="300"
+    xmlns:fluent="clr-namespace:Fluent">
+    <UserControl.RenderTransform>
+        <TranslateTransform x:Name="MainTranslateTransform" X="300" Y="68"/>
+    </UserControl.RenderTransform>
+
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+
+            <Storyboard x:Name="Show_StatusPopup">
+                <DoubleAnimation Storyboard.TargetName="UserControl1" Storyboard.TargetProperty="(RenderTransform).X" To="-20" Duration="00:00:0.800">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+
+            <Storyboard x:Name="Hide_StatusPopup">
+                <DoubleAnimation Storyboard.TargetName="UserControl1" Storyboard.TargetProperty="Opacity" To="0" Duration="00:00:0.800">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+
+            </Storyboard>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <Border Name="OuterControl1"    CornerRadius="3" ClipToBounds="True">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="1" Direction="0" BlurRadius="30" Opacity="0.2"/>
+        </Border.Effect>
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border Width="3" Background="{StaticResource ImmersiveSystemAccentBrush}"/>
+            
+            <Grid Grid.Column="1">
+                <fluent:AcrylicBackground/>
+                <Border Background="{StaticResource InterfaceBackgroundColorBrush}" Opacity="0.5"/>
+
+                <ContentControl Name="ContentHolder" Margin="15,30,30,30">
+                    
+                </ContentControl>
+            </Grid>
+
+        </Grid>
+    </Border>
+
+
+</UserControl>

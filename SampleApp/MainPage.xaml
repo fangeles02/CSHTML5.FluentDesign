@@ -10,6 +10,8 @@
     xmlns:fluent="clr-namespace:Fluent;assembly=CSHTML5.FluentDesign">
 
     <Grid Name="Grid1">
+
+
         <ScrollViewer>
             <StackPanel Margin="20">
                 <TextBlock Text="CSHTML5.FluentDesign" FontWeight="Light" FontSize="20" x:Name="TextBlock1" Margin="0,20,0,20"/>
@@ -40,6 +42,15 @@
                     <Button Name="Button_ModalSample2" Content="Pre-created" Margin="2" Click="Button_ModalSample2_Click"/>
                 </StackPanel>
 
+
+                <TextBlock Text="Status Popup" FontWeight="Bold" Margin="0,20,0,5"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="Button_StatusPopup1" Content="Simple status popup" Margin="2" Click="Button_StatusPopup1_Click"/>
+                 
+                </StackPanel>
+                
+                
+                
                 <TextBlock Text="Cards" FontWeight="Bold" Margin="0,20,0,5"/>
                 <StackPanel Orientation="Horizontal">
                     <Button  Margin="2,2,5,2" Style="{StaticResource CardStyle}" Width="250" Height="400" >
@@ -182,7 +193,6 @@
 
             </StackPanel>
         </ScrollViewer>
-
 
     </Grid>
 </Page>

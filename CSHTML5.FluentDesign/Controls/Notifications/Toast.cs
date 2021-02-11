@@ -33,9 +33,6 @@ namespace Fluent
         public static void MakeText(Panel ParentControl, string Text, TOAST_DURATION Duration)
         {
 
-
-
-
             Border OuterControl;
             TextBlock Message;
 
@@ -44,8 +41,11 @@ namespace Fluent
             OuterControl.Name = "OuterControl1";
             OuterControl.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
             OuterControl.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Bottom;
-            OuterControl.Margin = new Thickness(10);
+            //OuterControl.Margin = new Thickness(10);
             OuterControl.ClipToBounds = true;
+
+
+   
 
 
             Grid grid1 = new Grid();
@@ -92,15 +92,15 @@ namespace Fluent
             ParentControl.Children.Add(OuterControl);
 
 
-            //TranslateTransform translateTransform1 = new TranslateTransform();
-            //OuterControl.RenderTransform = translateTransform1;
+            TranslateTransform translateTransform1 = new TranslateTransform();
+            OuterControl.RenderTransform = translateTransform1;
 
-            //DoubleAnimation doubleAnimation1 = new DoubleAnimation { From = Convert.ToInt32(OuterControl.ActualHeight / 2), To = -500, Duration = new Duration(TimeSpan.FromMilliseconds(3000)) };
-            //Storyboard.SetTarget(doubleAnimation1, OuterControl);
-            //Storyboard.SetTargetProperty(doubleAnimation1, new PropertyPath(Canvas.LeftProperty));
-            //Storyboard storyBoard1 = new Storyboard();
-            //storyBoard1.Children.Add(doubleAnimation1);
-            //storyBoard1.Begin();
+            DoubleAnimation doubleAnimation1 = new DoubleAnimation { From = Convert.ToInt32(OuterControl.ActualHeight / 2), To = -500, Duration = new Duration(TimeSpan.FromMilliseconds(3000)) };
+            Storyboard.SetTarget(doubleAnimation1, OuterControl);
+            Storyboard.SetTargetProperty(doubleAnimation1, new PropertyPath("()"));
+            Storyboard storyBoard1 = new Storyboard();
+            storyBoard1.Children.Add(doubleAnimation1);
+            storyBoard1.Begin();
 
 
 

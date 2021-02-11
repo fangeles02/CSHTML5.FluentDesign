@@ -10,11 +10,14 @@ namespace SampleApp
 {
     public partial class MainPage : Page
     {
+        StatusPopup popupcontrol;
         public MainPage()
         {
             this.InitializeComponent();
 
             // Enter construction logic here...
+
+            popupcontrol = new StatusPopup(Grid1);
         }
 
         private async void Button_Normal_Click(object sender, RoutedEventArgs e)
@@ -82,6 +85,11 @@ namespace SampleApp
         {
             SampleModal sm = new SampleModal();
             sm.ShowAndWait();
+        }
+
+        private void Button_StatusPopup1_Click(object sender, RoutedEventArgs e)
+        {
+            popupcontrol.ShowMessage("The quick brown fox jumps over the lazy dog.", 3);
         }
     }
 }
